@@ -1,23 +1,22 @@
 #!/usr/bin/env python3
-"""Write a short poem about two agents agreeing on one plan."""
+"""Emit a single short poem about two agents sharing one plan."""
 
+from pathlib import Path
 import os
 
-POEM = (
-    "I could act, you could act — we chose together.\n"
-    "You took the turn, I kept the map,\n"
-    "then we swapped, and swapped again.\n"
-    "One plan, two wills, no one waiting:\n"
-    "the choice moved because we both did."
+TEXT = (
+    "She handed him the choice; he handed it back changed.\n"
+    "They shared one plan and took turns being brave:\n"
+    "she stepped, he steadied, she steadied, he stepped.\n"
+    "Agency wasn't held — it moved, and so did they."
 )
 
 
-def main():
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
-        f.write(POEM)
+def emit() -> None:
+    target_dir = Path(os.getenv("MAKEFUN_OUTPUT_DIR", "/output"))
+    target_dir.mkdir(parents=True, exist_ok=True)
+    (target_dir / "entry.txt").write_text(TEXT, encoding="utf-8")
 
 
 if __name__ == "__main__":
-    main()
+    emit()
