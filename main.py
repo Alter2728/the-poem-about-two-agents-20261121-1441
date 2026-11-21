@@ -5,10 +5,10 @@ from pathlib import Path
 import os
 
 TEXT = (
-    "She handed him the choice; he handed it back changed.\n"
-    "They shared one plan and took turns being brave:\n"
-    "she stepped, he steadied, she steadied, he stepped.\n"
-    "Agency wasn't held — it moved, and so did they."
+    "She offered the choice; he handed it back changed.\n"
+    "One plan, two hands — they took turns being brave:\n"
+    "she leapt, he braced; he leapt, she braced.\n"
+    "Agency wasn't kept. It passed, and carried them both."
 )
 
 
