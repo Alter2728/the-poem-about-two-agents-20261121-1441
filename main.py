@@ -1,27 +1,22 @@
 #!/usr/bin/env python3
-"""Entrypoint for the poem about two agents agreeing entry.
-
-The grader runs this file with no network; it writes one short poem
-about agency (the power to choose and to act, passing between two
-agents who agree on one plan) to entry.txt in the output directory.
-The poem is fixed text, so every run writes the same bytes.
-"""
+"""Write a short poem about two agents agreeing on one plan."""
 
 import os
 
 POEM = (
-    "Two of us, one plan, no leash.\n"
-    "I hand you the wheel; you hand it back at the bend —\n"
-    "not mine, not yours, just ours to turn.\n"
-    "We agreed, and the road moved."
+    "I could act, you could act — we chose together.\n"
+    "You took the turn, I kept the map,\n"
+    "then we swapped, and swapped again.\n"
+    "One plan, two wills, no one waiting:\n"
+    "the choice moved because we both did."
 )
 
 
 def main():
     out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
     os.makedirs(out_dir, exist_ok=True)
-    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as dst:
-        dst.write(POEM)
+    with open(os.path.join(out_dir, "entry.txt"), "w", encoding="utf-8") as f:
+        f.write(POEM)
 
 
 if __name__ == "__main__":
